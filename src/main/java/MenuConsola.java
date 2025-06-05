@@ -12,6 +12,7 @@ public class MenuConsola {
         boolean continuar = true;
 
         while(continuar) {
+            
             System.out.println("=================================== SISTEMA DE GESTIÓN - TECHLAB ==================================");
             System.out.println("1) Agregar Producto");
             System.out.println("2) Listar Productos");
