@@ -72,5 +72,8 @@ public class Producto {
             producto.mostrarProducto();
         }
     }
+    public boolean contieneNombre(String busqueda){
+        return this.nombre.contains(busqueda);
+    }
 
 }

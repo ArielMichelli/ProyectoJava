@@ -35,7 +35,7 @@ public class MenuConsola {
                     listarProductos(scanner);
                     break;
                 case 3:
-                    modificarProducto(scanner);
+                    buscarProducto(scanner);
                     break;
                 case 4:
                     eliminarProducto(scanner);
@@ -92,13 +92,44 @@ public class MenuConsola {
         scanner.nextLine(); // espera input
     }
 
-    public static void modificarProducto(Scanner scanner) {
+    public static void buscarProducto(Scanner scanner) {
         separadorDeMenu();
-        System.out.println(">>> Submenu: Modificar Productos");
-        System.out.println("Producto 1");
-        System.out.println("Producto 2");
+        System.out.println(">>> Submenu: Buscar Productos");
+        System.out.println("Ingrese Nombre o ID del producto a buscar:");
+        String nombreProducto = scanner.nextLine();
+        ArrayList<Producto> productosEncontrados = new ArrayList<>();
+        for(Producto producto: productosAgregados){
+            if(producto.contieneNombre(nombreProducto)){
+                productosEncontrados.add(producto);
+        }
+        if(productosEncontrados.isEmpty()){
+            System.out.printf("No pudimos encontrar el producto con el nombre: <%s>%n",nombreProducto);
+        }else {
+            System.out.println("PRODUCTOS ENCONTRADOS:");
+            for (Producto prod : productosEncontrados) {
+                prod.mostrarProducto();
+
+                System.out.println("Desea modificar el producto?:");
+                System.out.println("1) Modificar el Producto");
+                System.out.println("2) Regresar al Menu Principal");
+                int opcion2 = scanner.nextInt();
+
+                if(opcion2 == 1){
+                    modificarProducto(prod);
+                } else if (opcion2 == 2) {
+                    System.out.println("Regresando al Menu Principal...");
+                }
+            }
+
+        }
+        }
+
         System.out.print("Presione Enter para volver...");
         scanner.nextLine(); // espera input
+    }
+
+    public static  void  modificarProducto(Producto prod){
+        System.out.println("QUIERE MODIFICAR EL PRODUCTO NOOOO!");
     }
 
     public static void eliminarProducto(Scanner scanner) {

@@ -15,7 +15,7 @@ public class Pedido {
         pedidos.add(producto);
     }
 
-    public void mostrarProductos(){
+    public void mostrarPedido(){
         for(Producto producto: pedidos){
             producto.mostrarProducto();
         }
