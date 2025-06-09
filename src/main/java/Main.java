@@ -10,14 +10,16 @@ public class Main {
 
         Pedido pedido = new Pedido();
 
-        // PRODUCTOS DE PRUEBA:
-//        Producto pepino = new Producto("Pepino", 750, 100);
+        // PRODUCTOS DE PRUEBA PARA UN PEDIDO:
+//        Producto pepino = new Producto("Pepino", 500, 100);
 //        Producto tomate = new Producto("Tomate", 2000, 120);
-//        Producto lechuga = new Producto("Lechuga", 2500, 150);
+//        Producto lechuga = new Producto("Lechuga", 500, 150);
 //
 //        pedido.agregarProducto(pepino);
 //        pedido.agregarProducto(tomate);
 //        pedido.agregarProducto(lechuga);
+//        pedido.mostrarPedido();
+//        System.out.println("Monto Total: "+ pedido.calcularTotal());
 
         // INICIALIZO LA CONSOLA ==> MENU
         MenuConsola.inicializarConsola();

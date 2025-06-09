@@ -135,9 +135,28 @@ public class MenuConsola {
     public static void eliminarProducto(Scanner scanner) {
         separadorDeMenu();
         System.out.println(">>> Submenu: Eliminar Producto");
-        System.out.println("Producto 1");
-        System.out.println("Producto 2");
-        System.out.print("Presione Enter para volver...");
+        System.out.println(" === Productos Actuales ===");
+        for(Producto producto : productosAgregados){
+            producto.mostrarProducto();
+        }
+        System.out.println("Ingrese ID de Producto a Eliminar:");
+
+        int IDproductoAEliminar =  scanner.nextInt();
+        boolean borrado = false;
+
+        for(int i = 0; i < productosAgregados.size(); i++) {
+            Producto producto = productosAgregados.get(i);
+            if (producto.getId() == IDproductoAEliminar) {
+                productosAgregados.remove(producto);
+                System.out.println("✅ Producto con ID " + IDproductoAEliminar + " Eliminado.");
+                borrado = true;
+                break;
+            }
+        }
+        if(!borrado){
+            System.out.println("❌ No se encontró un producto con ese ID.");
+        }
+        System.out.println("Presione Enter para volver...");
         scanner.nextLine(); // espera input
     }
 
